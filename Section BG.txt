@@ -1,0 +1,72 @@
+<html>
+<head>
+  <title>Animated Button with Background Image</title>
+  <style>
+    /* Button Style */
+    .animated-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .animated-button span {
+      position: relative;
+      z-index: 1;
+    }
+    .animated-button::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300%;
+      height: 300%;
+      background-color: #fff;
+      transition: all 0.3s ease;
+      border-radius: 50%;
+      z-index: 0;
+      transform: translate(-50%, -50%);
+    }
+    .animated-button:hover::before {
+      width: 0;
+      height: 0;
+    }
+    /* Three Sections Animation */
+    .section {
+      width: 33.33%;
+      float: left;
+      text-align: center;
+      background-image: url('background-image.jpg'); /* Specify the URL of your background image */
+      background-size: cover;
+      background-position: center;
+      color: #fff; /* Change text color for better visibility */
+      padding: 20px; /* Add some padding for better readability */
+    }
+    .section span {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="section">
+    <a href="#" class="animated-button">
+      <span>Section 1</span>
+    </a>
+  </div>
+  <div class="section">
+    <a href="#" class="animated-button">
+      <span>Section 2</span>
+    </a>
+  </div>
+  <div class="section">
+    <a href="#" class="animated-button">
+      <span>Section 3</span>
+    </a>
+  </div>
+</body>
+</html>
